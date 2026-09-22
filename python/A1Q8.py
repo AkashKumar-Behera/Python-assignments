@@ -7,6 +7,8 @@ def check_password(password):
         return "False  \nPassword must contain at least one uppercase letter."
     elif not any(char.islower() for char in password):
         return "False \nPassword must contain at least one lowercase letter."
+    elif not any(not char.isalnum() for char in password):
+        return "False \nPassword must contain at least one special character."
     else:
         return "True \nPassword is valid."
 
